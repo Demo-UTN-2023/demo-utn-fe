@@ -1,7 +1,6 @@
-import { ICar } from "./ICar";
-
 export interface IUser {
+  id?: number;
   name: string;
-  lastname: string;
-  car?: Array<ICar>;
+  lastName: string;
+  country: string;
 }
