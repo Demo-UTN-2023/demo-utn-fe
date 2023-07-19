@@ -13,10 +13,10 @@ interface InitialState {
 const initialState: InitialState = {
   activeUser: undefined,
   users: [
-    { id: 1, name: "Denner", lastName: 'Portuguez', country: 'Costa Rica' },
-    { id: 2, name: "Karol", lastName: 'Arce', country: 'Alemania' },
-    { id: 3, name: "Freivin", lastName: 'Campbell', country: 'Brasil' },
-    { id: 4, name: "Jimmy", lastName: 'Ugalde', country: 'Costa Rica' },
+    { _id: '1', name: "Denner", lastname: 'Portuguez', country: 'Costa Rica' },
+    { _id: '2', name: "Karol", lastname: 'Arce', country: 'Alemania' },
+    { _id: '3', name: "Freivin", lastname: 'Campbell', country: 'Brasil' },
+    { _id: '4', name: "Jimmy", lastname: 'Ugalde', country: 'Costa Rica' },
   ],
   action: false
 }

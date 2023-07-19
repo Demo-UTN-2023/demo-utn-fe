@@ -13,7 +13,7 @@ const CreateUser = () => {
   const navigate = useNavigate();
 
   const [name, setName] = useState<string>('');
-  const [lastName, setLastName] = useState<string>('');
+  const [lastname, setlastname] = useState<string>('');
   const [country, setCountry] = useState<string>('');
 
 
@@ -21,7 +21,7 @@ const CreateUser = () => {
     const user: IUser = {
       country,
       name,
-      lastName
+      lastname
     }
     dispatch(createUser(user));
   }
@@ -60,8 +60,8 @@ const CreateUser = () => {
               </div>
               <div className="row mt-2 mb-2">
                 <div className="col-12">
-                  <label className="form-label" htmlFor="lastNameInput">Last Name</label>
-                  <input className="form-control" id="lastNameInput" type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                  <label className="form-label" htmlFor="lastnameInput">Last Name</label>
+                  <input className="form-control" id="lastnameInput" type="text" value={lastname} onChange={(e) => setlastname(e.target.value)} />
                 </div>
               </div>
               <div className="row mt-2 mb-5">

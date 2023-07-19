@@ -16,7 +16,7 @@ export const getUsers = async () => {
 export const postUser = async (user: IUser) => {
   try {
     const data = { ...user };
-    delete data.id;
+    delete data._id;
     const res = await axios.post(`${BASE_API_URL}/users`, data);
 
     return true;
@@ -28,7 +28,7 @@ export const postUser = async (user: IUser) => {
 export const putUser = async (user: IUser) => {
   try {
     const data = { ...user };
-    const res = await axios.put(`${BASE_API_URL}/users/${user.id}`, data);
+    const res = await axios.put(`${BASE_API_URL}/users/${user._id}`, data);
 
     return res.data;
   } catch (error) {
@@ -38,7 +38,7 @@ export const putUser = async (user: IUser) => {
 
 export const deleteUser = async (user: IUser) => {
   try {
-    const res = await axios.delete(`${BASE_API_URL}/users/${user.id}`);
+    const res = await axios.delete(`${BASE_API_URL}/users/${user._id}`);
     const users = await getUsers();
     return users;
   } catch (error) {

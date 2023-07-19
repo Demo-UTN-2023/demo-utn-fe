@@ -25,7 +25,7 @@ const Users = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isDenied) {
-        if (user.id) {
+        if (user._id) {
           dispatch(removeUser(user))
         }
       }
@@ -34,7 +34,7 @@ const Users = () => {
 
   const onUpdate = (user: IUser) => {
     dispatch(setActiveUser(user));
-    navigate(`/users/update/${user.id}`);
+    navigate(`/users/update/${user._id}`);
   }
 
   return (
@@ -62,10 +62,10 @@ const Users = () => {
                   <th scope="col">Actions</th>
                 </tr>
                 {users && users.map((item: IUser) => (
-                  <tr key={item.id}>
-                    <td>{item.id}</td>
+                  <tr key={item._id}>
+                    <td>{item._id}</td>
                     <td>{item.name}</td>
-                    <td>{item.lastName}</td>
+                    <td>{item.lastname}</td>
                     <td>{item.country}</td>
                     <td className="d-flex flex-wrap flex-column">
                       <button className="btn btn-primary mb-2 mt-2">See Car(s)</button>

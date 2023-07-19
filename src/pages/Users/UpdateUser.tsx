@@ -15,15 +15,15 @@ const UpdateUser = () => {
   const navigate = useNavigate();
 
   const [name, setName] = useState<string>(activeUser?.name ?? '');
-  const [lastName, setLastName] = useState<string>(activeUser?.lastName ?? '');
+  const [lastname, setlastname] = useState<string>(activeUser?.lastname ?? '');
   const [country, setCountry] = useState<string>(activeUser?.country ?? '');
 
   useEffect(() => {
 
     if (!activeUser) {
-      const user = users.find((item: IUser) => item.id == userId);
+      const user = users.find((item: IUser) => item._id == userId);
       setName(user!.name);
-      setLastName(user!.lastName)
+      setlastname(user!.lastname)
       setCountry(user!.country);
       dispatch(setActiveUser(user))
     }
@@ -39,8 +39,8 @@ const UpdateUser = () => {
     const userUpdated: IUser = {
       country,
       name,
-      lastName,
-      id: Number.parseInt(userId!)
+      lastname,
+      _id: userId
     }
     dispatch(updateUser(userUpdated));
   }
@@ -77,8 +77,8 @@ const UpdateUser = () => {
               </div>
               <div className="row mt-2 mb-2">
                 <div className="col-12">
-                  <label className="form-label" htmlFor="lastNameInput">Last Name</label>
-                  <input className="form-control" id="lastNameInput" type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                  <label className="form-label" htmlFor="lastnameInput">Last Name</label>
+                  <input className="form-control" id="lastnameInput" type="text" value={lastname} onChange={(e) => setlastname(e.target.value)} />
                 </div>
               </div>
               <div className="row mt-2 mb-5">
