@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../hooks/useAppSelector"
 import { IUser } from "../../interfaces/IUser";
-import { changeAction, setActiveUser, updateUser } from "./usersSlider";
+import { changeAction, getAllUsers, setActiveUser, updateUser } from "./usersSlider";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import Swal from 'sweetalert2'
 import { useEffect, useState } from "react";
@@ -32,10 +32,15 @@ const UpdateUser = () => {
     return () => {
       dispatch(changeAction(false))
       dispatch(setActiveUser(undefined));
+      dispatch(getAllUsers());
     }
   }, [])
 
-  const onClickUpdate = () => {
+  const onClickUpdate = (e:any) => {
+    e.preventDefault();
+    console.log(country)
+    console.log(name)
+    console.log(lastname)
     const userUpdated: IUser = {
       country,
       name,
@@ -51,6 +56,7 @@ const UpdateUser = () => {
       confirmButtonText: 'OK',
     }).then((result) => {
       dispatch(changeAction(false))
+      dispatch(getAllUsers());
       navigate('/users')
     })
   }

@@ -27,8 +27,7 @@ export const postUser = async (user: IUser) => {
 
 export const putUser = async (user: IUser) => {
   try {
-    const data = { ...user };
-    const res = await axios.put(`${BASE_API_URL}/users/${user._id}`, data);
+    const res = await axios.patch(`${BASE_API_URL}/users/${user._id}`, user);
 
     return res.data;
   } catch (error) {

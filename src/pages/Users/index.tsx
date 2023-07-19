@@ -12,6 +12,8 @@ const Users = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  console.log(users)
+
   useEffect(() => {
     dispatch(getAllUsers());
   }, [])

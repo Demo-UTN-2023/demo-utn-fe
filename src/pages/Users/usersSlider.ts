@@ -40,7 +40,6 @@ export const usersSlice = createSlice({
     });
     builder.addCase(updateUser.fulfilled, (state, action) => {
       if (action.payload) {
-        state.users = action.payload
         state.action = true;
       }
     });
