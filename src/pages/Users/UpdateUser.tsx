@@ -36,11 +36,8 @@ const UpdateUser = () => {
     }
   }, [])
 
-  const onClickUpdate = (e:any) => {
+  const onClickUpdate = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    console.log(country)
-    console.log(name)
-    console.log(lastname)
     const userUpdated: IUser = {
       country,
       name,
